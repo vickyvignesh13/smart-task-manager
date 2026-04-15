@@ -9,7 +9,9 @@ const taskRoutes = require("./routes/taskRoutes");
 const profileRoutes = require("./routes/profileRoutes");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin:"https://smart-task-manager-kuin.onrender.com",credentials:true
+}));
 
 const mongoUrl = process.env.MONGO_URL;
 mongoose.connect(mongoUrl, err => {
